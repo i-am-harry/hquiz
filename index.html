@@ -1,0 +1,168 @@
+<!DOCTYPE html>	
+<html class="h-100">
+	
+	<head>
+		<title>hquiz.com</title>
+		<script src="scripts/database.js"></script>
+		<script src="scripts/main.js"></script>
+		<link href="styles/main.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body class="m-0 p-0 h-100 overflow-hidden">
+		
+
+		<!-- Section 0 -->
+		<div id="section0" class="h-100 m-0 p-0 animate-below-up">
+			<div class="section-0-header">
+				
+				<div class="w-100 text-center section-0-info-box h-100">
+					<p class="section-0-logo">hquiz</p>
+					<img src="1.png">
+					<br>
+					<p style="font-size: 20px;font-family: verdana;color:lightgrey">Online prepration for various test including aptitude and other general competitive exams.</p>
+				</div>
+
+				<div class="section-0-name">
+					<br><br>
+					Wait !!<br><br>What should i call you ?<br><br>
+					<input type="text" placeholder="Enter your name here" style="width:55%;" id="username_input">
+					<br>
+					<div class="error" id="username_input_error">Please enter username</div>
+					<button style="border:1% solid grey;border-radius: 5%;padding:1% 5%" onclick="check_username()">Continue</button>
+				</div>
+
+			</div>
+			<div style="text-align:right;">
+				<br><br>
+				<small>Webpage developed and maintained by:<br>
+				Harry Chhabra
+				<br>
+				harry.chhabra.official@gmail.com</small>
+			</div>
+		</div>
+		<!-- Section 0 ends-->
+
+		<!-- Section 1 -->
+		<div id="section1" class="h-100 section-1">
+			<div class="section-1-padding-box h-100">
+				
+				<div class="h-100 section-1-info-box text-center w-100">
+					<span style="font-size: 95px">&#9813;</span>
+					<br>
+					<br>
+					<b>It's time to test !!<br>It's time to prove !!<br>It's time to quiz !!</b><br>
+					
+					<br><br>
+					<b class="username"></b><br>
+
+					<i>Choose any subject to test your knowledge</i>
+					
+					<br><br>
+
+					
+				</div>
+
+				<div style="height:100%;border:1px solid white;box-sizing: border-box;width:100%;box-sizing: border-box;">
+					<button onclick="loadDisplay(1)" class="section-1-subject-button">Mathematics</button>
+					<button onclick="loadDisplay(2)" class="section-1-subject-button">Physics</button>
+					
+					<button onclick="loadDisplay(3)" class="section-1-subject-button">Chemistry</button>
+					<button onclick="loadDisplay(4)" class="section-1-subject-button">Computer</button>
+
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Section 1 ends-->
+
+		<!-- Section 2 -->
+
+		<div class="h-100 overflow-hidden w-100 m-0 p-0" style="background-color: #f7f7f7" id="section2">
+			<div class="h-100 overflow-hidden d-inline-block w-40 border-1 border-grey" style="box-sizing: border-box;">
+				<div style="background-color:white;padding:5px 15px;">Questions</div>
+
+				<div class="section-2-question-panel m-0 p-0 w-100 d-inline-block" id="questions_list_panel">
+					<b>No question selected</b>
+				</div>
+				
+			</div>
+			<div class="w-60 h-100 overflow-hidden d-inline-block w-100" style="background-color: white">
+				
+				<div class="section-2-top-panel w-100 text-center">
+
+					Hey <span class="username"></span> ! Hurry up<br>
+					
+					<div class="w-100 text-initial">
+						Time left: 0 : <span id="remaining_time">15:00</span> min 
+						<button class="section-2-submit-button" onclick="submit_test()">
+							Submit
+						</button>
+					</div>
+					
+					
+				</div>
+
+				<div class="section-2-question-display">
+					<div class="section-2-question-display-1" id="display0">
+						Question not selected !<br>Please select question to continue
+					</div>
+
+					<div class="section-2-question-display-2" id="display1">
+						<br>
+						<div id="display_question"></div>
+
+						<br><br>
+						<button class="section-2-question-option-button display_option" onclick="select_option(1)">Option1</button>
+						<button class="section-2-question-option-button display_option" onclick="select_option(2)">Option2</button>
+						<button class="section-2-question-option-button display_option" onclick="select_option(3)">Option3</button>
+						<button class="section-2-question-option-button display_option" onclick="select_option(4)">Option4</button>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Section 2 ends-->
+
+		<!-- Section 3 -->
+		<div id="section3" class="text-center h-100 border-1 border-grey">
+			<div style="display:inline-block;padding:10px;border:1px solid black;margin-top:4%;text-align: initial;">
+				Summary
+				<hr>
+				<table>
+					<tr>
+						<td>Username</td>
+						<td class="username">Harry</td>
+					</tr>
+					<tr>
+						<td>Subject Name</td>
+						<td id="subject_name">Mathematics</td>
+					</tr>
+					<tr>
+						<td>No of questions</td>
+						<td id="no_of_questions">5</td>
+					</tr>
+					<tr>
+						<td>No of attempted</td>
+						<td id="no_of_attempted">4</td>
+					</tr>
+					<tr>
+						<td>No of correct</td>
+						<td id="no_of_correct">0</td>
+					</tr>
+					<tr>
+						<td>Score</td>
+						<td id="score">0/5</td>
+					</tr>
+				</table>
+				<hr>
+				Keep practicing<br>Thank You !
+			</div>
+		</div>
+		<!-- Section 3 ends-->
+
+	</body>
+
+</html>
